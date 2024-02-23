@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+}
+
+.logo {
+	height: 7em;
+	padding: 1.5em;
+}
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.preact:hover {
+	filter: drop-shadow(0 0 2em #673ab8aa);
+}
+
+.card {
+	padding: 2em;
+}
+
+.read-the-docs {
+	color: #888;
+}
+
+.logotitlecontainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.apptitle {
+	text-align: center;
+	align-self: center;
+}
+
+.addbutton {
+}
+
+.tablecontainer {
+	background-color: #000000;
+}
+
+.tablerow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.reminderHeaderContainer {
+	display: flex;
+	padding: 0px;
+	margin: 0px;
+}
+
+.reminderHeaderContainerPending {
+}
+
+.reminderHeaderContainerCompleted {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.reminderHeaderTitle {
+	align-self: center;
+	font-weight: bold;
+}
+
+.reminderHeaderFlag {
+	align-self: center;
+	margin-left: 0.5em;
+}
+
+.reminderCompletedTask {
+	text-decoration-line: line-through;
+	color: #858585;
+	font-weight: normal;
+}
+
+.reminderDetailActions {
+	margin-top: 1em;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
