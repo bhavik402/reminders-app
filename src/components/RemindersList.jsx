@@ -7,7 +7,7 @@ const RemindersList = () => {
 	console.log('COMPONENT: RemindersList');
 
 	const getReminders = async () => {
-		const response = await fetch('http://localhost:8452/v1/reminders');
+		const response = await fetch('http://localhost:8452/v1/reminders/');
 		const r = await response.json();
 		console.log(r);
 		reminders.value = r;
