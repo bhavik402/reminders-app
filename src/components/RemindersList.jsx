@@ -4,10 +4,11 @@ import BasicAccordion from './AccordianList';
 const reminders = signal([]);
 
 const RemindersList = () => {
+	const baseURL = 'http://localhost:8452';
 	console.log('COMPONENT: RemindersList');
 
 	const getReminders = async () => {
-		const response = await fetch('http://localhost:8452/v1/reminders/');
+		const response = await fetch(`${baseURL}/v1/reminders/`);
 		const r = await response.json();
 		console.log(r);
 		reminders.value = r;
@@ -20,7 +21,7 @@ const RemindersList = () => {
 	const deleteReminder = async (item) => {
 		console.log('DELETE ITEM: ' + item);
 		try {
-			const response = await fetch(`http://localhost:8452/v1/reminders/${item.id}`, {
+			const response = await fetch(`${baseURL}/v1/reminders/${item.id}`, {
 				method: 'DELETE'
 			});
 			console.log(response);
@@ -32,13 +33,13 @@ const RemindersList = () => {
 
 	const updateStatus = async (item) => {
 		console.log(item);
-		await fetch(`http://localhost:8452/v1/reminders/status/${item.id}`, { method: 'PUT' });
+		await fetch(`${baseURL}/v1/reminders/status/${item.id}`, { method: 'PUT' });
 		getReminders();
 	};
 
 	const updateFlag = async (item) => {
 		console.log(item);
-		await fetch(`http://localhost:8452/v1/reminders/flag/${item.id}`, { method: 'PUT' });
+		await fetch(`${baseURL}/v1/reminders/flag/${item.id}`, { method: 'PUT' });
 		getReminders();
 	};
 
